@@ -1,0 +1,21 @@
+Notificador Gmail: um notificador Gmail para o desktop Linux (GNOME 3)
+2013, Cesar Cardoso
+
+Existem diversos notificadores de email para o desktop Linux. Nenhum que eu conheça me avisa APENAS os emails marcados como importantes do Gmail. Então resolvi escrever este script Bash.
+
+Para instalar:
+
+1) Copie notificador.sh para algum diretório
+
+2) Crie o arquivo .notificador no seu $HOME, com permissão 600 e contendo:
+USER=<seu usuário>
+PASS=<sua senha>
+
+Se a conta a ser notificada é do Google Apps, adicione:
+APPS=<seu domínio do Google Apps>
+
+3) Crie uma entrada no crontab, por exemplo:
+*/10 * * * * DISPLAY=:0 /onde/esta/seu/arquivo/notificador.sh
+para chamar a cada 10 minutos.
+
+ATENÇÃO que DISPLAY=:0 DEVE estar na linha de chamada do script.
